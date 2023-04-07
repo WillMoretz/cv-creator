@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor */
 import { Component } from "react";
 import EducationItem from "./EducationItem";
 

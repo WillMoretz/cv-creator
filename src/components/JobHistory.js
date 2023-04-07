@@ -24,13 +24,24 @@ export default class JobHistory extends Component {
     }));
   }
 
+  deleteItem(index) {
+    this.setState((prevState) => ({
+      items: prevState.items.filter((item) => item.index !== index),
+    }));
+  }
+
   render() {
     const jobHistoryItems = this.state.items.map((item) => (
-      <JobHistoryItem key={uuid()} />
+      <JobHistoryItem
+        key={uuid()}
+        index={item.index}
+        delete={this.deleteItem.bind(this)}
+      />
     ));
 
     return (
       <div>
+        <div>Job History</div>
         <div>{jobHistoryItems}</div>
         <button onClick={() => this.addItem()}>Add</button>
       </div>
