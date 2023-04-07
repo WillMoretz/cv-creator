@@ -6,8 +6,8 @@ export default class EducationItem extends Component {
     super(props);
   }
 
-  handleDelete(index) {
-    this.props.delete(index);
+  handleDelete(key) {
+    this.props.delete(key);
   }
 
   render() {
@@ -43,7 +43,7 @@ export default class EducationItem extends Component {
         </div>
         <button
           type="button"
-          onClick={() => this.handleDelete(this.props.index)}
+          onClick={() => this.handleDelete(this.props.keyProp)}
         >
           Delete
         </button>

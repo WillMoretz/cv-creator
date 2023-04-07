@@ -20,21 +20,21 @@ export default class Education extends Component {
 
   addItem() {
     this.setState((prevState) => ({
-      items: [...prevState.items, { index: prevState.items.length + 1 }],
+      items: [...prevState.items, { key: uuid() }],
     }));
   }
 
-  deleteItem(index) {
+  deleteItem(key) {
     this.setState((prevState) => ({
-      items: prevState.items.filter((item) => item.index !== index),
+      items: prevState.items.filter((item) => item.key !== key),
     }));
   }
 
   render() {
     const educationItems = this.state.items.map((item) => (
       <EducationItem
-        key={uuid()}
-        index={item.index}
+        key={item.key}
+        keyProp={item.key}
         delete={this.deleteItem.bind(this)}
       />
     ));
