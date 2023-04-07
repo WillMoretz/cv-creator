@@ -20,12 +20,14 @@ export default class JobHistory extends Component {
 
   addItem() {
     this.setState((prevState) => ({
-      items: [...prevState.items, <JobHistoryItem key={uuid()} />],
+      items: [...prevState.items, { index: prevState.items.length + 1 }],
     }));
   }
 
   render() {
-    const jobHistoryItems = this.state.items.map((item) => item);
+    const jobHistoryItems = this.state.items.map((item) => (
+      <JobHistoryItem key={uuid()} />
+    ));
 
     return (
       <div>
