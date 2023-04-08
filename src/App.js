@@ -1,4 +1,5 @@
 /* eslint-disable no-useless-constructor */
+import { v4 as uuid } from "uuid";
 import { Component } from "react";
 import CoverLetter from "./components/CoverLetter";
 import Education from "./components/Education";
@@ -17,6 +18,7 @@ export default class App extends Component {
         phone: "",
         description: "",
       },
+      educationItems: [],
     };
   }
 
@@ -29,7 +31,24 @@ export default class App extends Component {
         phone: "",
         description: "",
       },
+      educationItems: [],
     }));
+  }
+
+  addEducationItem() {
+    const newEducationItems = this.state.educationItems;
+    newEducationItems.push({ key: uuid() });
+    this.setState({
+      educationItems: newEducationItems,
+    });
+  }
+
+  deleteEducationItem(key) {
+    let newEducationItems = this.state.educationItems;
+    newEducationItems = newEducationItems.filter((item) => item.key !== key);
+    this.setState({
+      educationItems: newEducationItems,
+    });
   }
 
   updatePersonalInfo(property, e) {
@@ -74,7 +93,11 @@ export default class App extends Component {
           update={this.updatePersonalInfo.bind(this)}
         />
         <JobHistory />
-        <Education />
+        <Education
+          values={this.state.educationItems}
+          add={this.addEducationItem.bind(this)}
+          delete={this.deleteEducationItem.bind(this)}
+        />
         <div className="buttons">
           <button onClick={() => this.reset()}>Reset</button>
         </div>

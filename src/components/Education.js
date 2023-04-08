@@ -6,32 +6,18 @@ import { v4 as uuid } from "uuid";
 export default class Education extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      items: [],
-    };
-  }
-
-  reset() {
-    this.setState((prevState) => ({
-      items: [],
-    }));
   }
 
   addItem() {
-    this.setState((prevState) => ({
-      items: [...prevState.items, { key: uuid() }],
-    }));
+    this.props.add();
   }
 
   deleteItem(key) {
-    this.setState((prevState) => ({
-      items: prevState.items.filter((item) => item.key !== key),
-    }));
+    this.props.delete(key);
   }
 
   render() {
-    const educationItems = this.state.items.map((item) => (
+    const educationItems = this.props.values.map((item) => (
       <EducationItem
         key={item.key}
         keyProp={item.key}
