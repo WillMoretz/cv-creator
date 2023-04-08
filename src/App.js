@@ -37,10 +37,42 @@ export default class App extends Component {
 
   addEducationItem() {
     const newEducationItems = this.state.educationItems;
-    newEducationItems.push({ key: uuid() });
+    newEducationItems.push({
+      key: uuid(),
+      name: "",
+      subject: "",
+      degree: "",
+      start: "",
+      end: "",
+    });
     this.setState({
       educationItems: newEducationItems,
     });
+  }
+
+  updateEducationItem(key, property, e) {
+    const educationItemsCopy = this.state.educationItems;
+    const index = educationItemsCopy.findIndex((item) => item.key === key);
+    if (property === "name") {
+      educationItemsCopy[index].name = e.target.value;
+      this.setState({ educationItems: educationItemsCopy });
+    }
+    if (property === "subject") {
+      educationItemsCopy[index].subject = e.target.value;
+      this.setState({ educationItems: educationItemsCopy });
+    }
+    if (property === "degree") {
+      educationItemsCopy[index].degree = e.target.value;
+      this.setState({ educationItems: educationItemsCopy });
+    }
+    if (property === "start") {
+      educationItemsCopy[index].start = e.target.value;
+      this.setState({ educationItems: educationItemsCopy });
+    }
+    if (property === "end") {
+      educationItemsCopy[index].end = e.target.value;
+      this.setState({ educationItems: educationItemsCopy });
+    }
   }
 
   deleteEducationItem(key) {
@@ -97,6 +129,7 @@ export default class App extends Component {
           values={this.state.educationItems}
           add={this.addEducationItem.bind(this)}
           delete={this.deleteEducationItem.bind(this)}
+          update={this.updateEducationItem.bind(this)}
         />
         <div className="buttons">
           <button onClick={() => this.reset()}>Reset</button>
