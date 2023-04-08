@@ -4,47 +4,10 @@ import { Component } from "react";
 export default class PersonalInfo extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      name: "",
-      title: "",
-      email: "",
-      phone: "",
-      description: "",
-    };
   }
 
-  reset() {
-    this.setState((prevState) => ({
-      name: "",
-      title: "",
-      email: "",
-      phone: "",
-      description: "",
-    }));
-  }
-
-  updateState(property, e) {
-    if (property === "name") {
-      this.setState({ name: e.target.value });
-      return;
-    }
-    if (property === "title") {
-      this.setState({ title: e.target.value });
-      return;
-    }
-    if (property === "email") {
-      this.setState({ email: e.target.value });
-      return;
-    }
-    if (property === "phone") {
-      this.setState({ phone: e.target.value });
-      return;
-    }
-    if (property === "description") {
-      this.setState({ description: e.target.value });
-      return;
-    }
+  update(property, e) {
+    this.props.update(property, e);
   }
 
   render() {
@@ -56,8 +19,8 @@ export default class PersonalInfo extends Component {
             type="text"
             name="name"
             id="name"
-            value={this.state.name}
-            onChange={(e) => this.updateState("name", e)}
+            value={this.props.name}
+            onChange={(e) => this.update("name", e)}
           />
         </div>
         <div className="form-row">
@@ -66,8 +29,8 @@ export default class PersonalInfo extends Component {
             type="text"
             name="title"
             id="title"
-            value={this.state.title}
-            onChange={(e) => this.updateState("title", e)}
+            value={this.props.title}
+            onChange={(e) => this.update("title", e)}
           />
         </div>
         <div className="form-row">
@@ -76,8 +39,8 @@ export default class PersonalInfo extends Component {
             type="email"
             name="email"
             id="email"
-            value={this.state.email}
-            onChange={(e) => this.updateState("email", e)}
+            value={this.props.email}
+            onChange={(e) => this.update("email", e)}
           />
         </div>
         <div className="form-row">
@@ -86,8 +49,8 @@ export default class PersonalInfo extends Component {
             type="tel"
             name="phone"
             id="phone"
-            value={this.state.phone}
-            onChange={(e) => this.updateState("phone", e)}
+            value={this.props.phone}
+            onChange={(e) => this.update("phone", e)}
           />
         </div>
         <div className="form-row">
@@ -96,8 +59,8 @@ export default class PersonalInfo extends Component {
             type="text"
             name="description"
             id="description"
-            value={this.state.description}
-            onChange={(e) => this.updateState("description", e)}
+            value={this.props.description}
+            onChange={(e) => this.update("description", e)}
           />
         </div>
       </form>
