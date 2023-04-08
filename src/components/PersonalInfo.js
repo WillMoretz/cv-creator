@@ -19,7 +19,7 @@ export default class PersonalInfo extends Component {
             type="text"
             name="name"
             id="name"
-            value={this.props.name}
+            value={this.props.values.name}
             onChange={(e) => this.update("name", e)}
           />
         </div>
@@ -29,7 +29,7 @@ export default class PersonalInfo extends Component {
             type="text"
             name="title"
             id="title"
-            value={this.props.title}
+            value={this.props.values.title}
             onChange={(e) => this.update("title", e)}
           />
         </div>
@@ -39,7 +39,7 @@ export default class PersonalInfo extends Component {
             type="email"
             name="email"
             id="email"
-            value={this.props.email}
+            value={this.props.values.email}
             onChange={(e) => this.update("email", e)}
           />
         </div>
@@ -49,7 +49,7 @@ export default class PersonalInfo extends Component {
             type="tel"
             name="phone"
             id="phone"
-            value={this.props.phone}
+            value={this.props.values.phone}
             onChange={(e) => this.update("phone", e)}
           />
         </div>
@@ -59,7 +59,7 @@ export default class PersonalInfo extends Component {
             type="text"
             name="description"
             id="description"
-            value={this.props.description}
+            value={this.props.values.description}
             onChange={(e) => this.update("description", e)}
           />
         </div>
