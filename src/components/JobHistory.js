@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import { Component } from "react";
 import JobHistoryItem from "./JobHistoryItem";
-import { v4 as uuid } from "uuid";
 
 export default class JobHistory extends Component {
   constructor(props) {
