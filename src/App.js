@@ -184,7 +184,7 @@ export default class App extends Component {
         <div className="buttons">
           <button onClick={() => this.reset()}>Reset</button>
         </div>
-        <CoverLetter />
+        <CoverLetter values={this.state} />
         <footer>Made by Will Moretz</footer>
       </div>
     );
