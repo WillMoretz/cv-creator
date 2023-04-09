@@ -1,10 +1,11 @@
 /* eslint-disable no-useless-constructor */
 import { v4 as uuid } from "uuid";
 import { Component } from "react";
-import CoverLetter from "./components/CoverLetter";
+import CV from "./components/CV";
 import Education from "./components/Education";
 import JobHistory from "./components/JobHistory";
 import PersonalInfo from "./components/PersonalInfo";
+import "./index.css";
 
 export default class App extends Component {
   constructor(props) {
@@ -164,27 +165,29 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>Cover Letter Creator</header>
-        <PersonalInfo
-          values={this.state.personalInfo}
-          update={this.updatePersonalInfo.bind(this)}
-        />
-        <JobHistory
-          values={this.state.jobHistoryItems}
-          add={this.addJobHistoryItem.bind(this)}
-          delete={this.deleteJobHistoryItem.bind(this)}
-          update={this.updateJobHistoryItem.bind(this)}
-        />
-        <Education
-          values={this.state.educationItems}
-          add={this.addEducationItem.bind(this)}
-          delete={this.deleteEducationItem.bind(this)}
-          update={this.updateEducationItem.bind(this)}
-        />
-        <div className="buttons">
-          <button onClick={() => this.reset()}>Reset</button>
-        </div>
-        <CoverLetter values={this.state} />
+        <header>CV Creator</header>
+        <section>
+          <PersonalInfo
+            values={this.state.personalInfo}
+            update={this.updatePersonalInfo.bind(this)}
+          />
+          <JobHistory
+            values={this.state.jobHistoryItems}
+            add={this.addJobHistoryItem.bind(this)}
+            delete={this.deleteJobHistoryItem.bind(this)}
+            update={this.updateJobHistoryItem.bind(this)}
+          />
+          <Education
+            values={this.state.educationItems}
+            add={this.addEducationItem.bind(this)}
+            delete={this.deleteEducationItem.bind(this)}
+            update={this.updateEducationItem.bind(this)}
+          />
+          <div className="buttons form-row">
+            <button onClick={() => this.reset()}>Reset</button>
+          </div>
+          <CV values={this.state} />
+        </section>
         <footer>Made by Will Moretz</footer>
       </div>
     );

@@ -34,7 +34,7 @@ export default class JobHistory extends Component {
     ));
 
     return (
-      <div>
+      <div className="form-row">
         <div>Job History</div>
         <div>{jobHistoryItems}</div>
         <button onClick={() => this.addItem()}>Add</button>

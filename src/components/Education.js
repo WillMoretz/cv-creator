@@ -35,7 +35,7 @@ export default class Education extends Component {
     ));
 
     return (
-      <div>
+      <div className="form-row">
         <div>Education</div>
         <div>{educationItems}</div>
         <button onClick={() => this.addItem()}>Add</button>
