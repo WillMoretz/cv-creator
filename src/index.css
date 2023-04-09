@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light: #fffffe;
+  --dark: #2b2c34;
+  --button: #6246ea;
+  --secondary: #d1d1e9;
+  --tertiary: #e45858;
+}
+
+.App {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  background-color: var(--secondary, lightgrey);
+  color: var(--dark, black);
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 0.75rem 0 0.75rem max(10vw, 20px);
+  border-bottom: 4px double black;
+}
+
+footer {
+  background-color: var(--secondary, lightgrey);
+  color: var(--dark, black);
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover-letter {
+  text-align: center;
+}
+
+input,
+button {
+  min-width: 300px;
+}
