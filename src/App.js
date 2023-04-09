@@ -19,6 +19,7 @@ export default class App extends Component {
         description: "",
       },
       educationItems: [],
+      jobHistoryItems: [],
     };
   }
 
@@ -32,7 +33,51 @@ export default class App extends Component {
         description: "",
       },
       educationItems: [],
+      jobHistoryItems: [],
     }));
+  }
+
+  addJobHistoryItem() {
+    const newJobHistoryItems = this.state.jobHistoryItems;
+    newJobHistoryItems.push({
+      key: uuid(),
+      position: "",
+      company: "",
+      start: "",
+      end: "",
+    });
+    this.setState({
+      jobHistoryItems: newJobHistoryItems,
+    });
+  }
+
+  updateJobHistoryItem(key, property, e) {
+    const jobHistoryItemsCopy = this.state.jobHistoryItems;
+    const index = jobHistoryItemsCopy.findIndex((item) => item.key === key);
+    if (property === "position") {
+      jobHistoryItemsCopy[index].position = e.target.value;
+      this.setState({ jobHistoryItems: jobHistoryItemsCopy });
+    }
+    if (property === "company") {
+      jobHistoryItemsCopy[index].company = e.target.value;
+      this.setState({ jobHistoryItems: jobHistoryItemsCopy });
+    }
+    if (property === "start") {
+      jobHistoryItemsCopy[index].start = e.target.value;
+      this.setState({ jobHistoryItems: jobHistoryItemsCopy });
+    }
+    if (property === "end") {
+      jobHistoryItemsCopy[index].end = e.target.value;
+      this.setState({ jobHistoryItems: jobHistoryItemsCopy });
+    }
+  }
+
+  deleteJobHistoryItem(key) {
+    let newJobHistoryItems = this.state.jobHistoryItems;
+    newJobHistoryItems = newJobHistoryItems.filter((item) => item.key !== key);
+    this.setState({
+      jobHistoryItems: newJobHistoryItems,
+    });
   }
 
   addEducationItem() {
@@ -124,7 +169,12 @@ export default class App extends Component {
           values={this.state.personalInfo}
           update={this.updatePersonalInfo.bind(this)}
         />
-        <JobHistory />
+        <JobHistory
+          values={this.state.jobHistoryItems}
+          add={this.addJobHistoryItem.bind(this)}
+          delete={this.deleteJobHistoryItem.bind(this)}
+          update={this.updateJobHistoryItem.bind(this)}
+        />
         <Education
           values={this.state.educationItems}
           add={this.addEducationItem.bind(this)}

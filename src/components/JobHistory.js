@@ -6,36 +6,31 @@ import { v4 as uuid } from "uuid";
 export default class JobHistory extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      items: [],
-    };
-  }
-
-  reset() {
-    this.setState((prevState) => ({
-      items: [],
-    }));
   }
 
   addItem() {
-    this.setState((prevState) => ({
-      items: [...prevState.items, { key: uuid() }],
-    }));
+    this.props.add();
   }
 
   deleteItem(key) {
-    this.setState((prevState) => ({
-      items: prevState.items.filter((item) => item.key !== key),
-    }));
+    this.props.delete(key);
+  }
+
+  updateItem(key, property, e) {
+    this.props.update(key, property, e);
   }
 
   render() {
-    const jobHistoryItems = this.state.items.map((item) => (
+    const jobHistoryItems = this.props.values.map((item) => (
       <JobHistoryItem
         key={item.key}
         keyProp={item.key}
+        position={item.position}
+        company={item.company}
+        start={item.start}
+        end={item.end}
         delete={this.deleteItem.bind(this)}
+        update={this.updateItem.bind(this)}
       />
     ));
 
