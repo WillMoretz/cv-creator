@@ -24,7 +24,7 @@ export default class CoverLetter extends Component {
     ));
 
     return (
-      <div>
+      <div className="cover-letter">
         <div className="personal-info">
           <div className="name">{personalInfo.name}</div>
           <div className="title">{personalInfo.title}</div>
@@ -32,8 +32,14 @@ export default class CoverLetter extends Component {
           <div className="phone">{personalInfo.phone}</div>
           <div className="description">{personalInfo.description}</div>
         </div>
-        <div className="job-history-elements">{jobHistoryElements}</div>
-        <div className="education-elements">{educationElements}</div>
+        <div className="job-history">
+          <div>Job History</div>
+          <div className="job-history-elements">{jobHistoryElements}</div>
+        </div>
+        <div className="education">
+          <div>Education</div>
+          <div className="education-elements">{educationElements}</div>
+        </div>
       </div>
     );
   }
