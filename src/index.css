@@ -19,7 +19,7 @@
 }
 
 header {
-  background-color: var(--secondary, lightgrey);
+  background-color: var(--secondary, lightpink);
   color: var(--dark, black);
   font-size: 2.5rem;
   font-weight: 700;
@@ -50,7 +50,67 @@ footer {
 }
 
 .cover-letter {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: min-content auto;
+  grid-template-areas: "name name" "job info" "education info";
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.1), -2px -2px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+}
+
+.personal-name {
+  grid-area: name;
+  background-color: var(--button, purple);
+  color: var(--light, white);
   text-align: center;
+  padding: 0.25rem 0 0.5rem 0;
+}
+
+.personal-name > .name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.personal-name > .title {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.personal-info {
+  grid-area: info;
+  background-color: var(--secondary, rgba(255, 0, 255, 0.5));
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "dates main";
+  align-items: center;
+}
+
+.dates {
+  grid-area: dates;
+  padding: 1rem;
+}
+
+.main-item {
+  grid-area: main;
+  text-align: center;
+}
+
+.job-history,
+.education {
+  background-color: var(--light, white);
+}
+
+.job-history {
+  grid-area: job;
+}
+
+.education {
+  grid-area: education;
 }
 
 input,

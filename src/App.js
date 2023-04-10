@@ -167,22 +167,24 @@ export default class App extends Component {
       <div className="App">
         <header>CV Creator</header>
         <section>
-          <PersonalInfo
-            values={this.state.personalInfo}
-            update={this.updatePersonalInfo.bind(this)}
-          />
-          <JobHistory
-            values={this.state.jobHistoryItems}
-            add={this.addJobHistoryItem.bind(this)}
-            delete={this.deleteJobHistoryItem.bind(this)}
-            update={this.updateJobHistoryItem.bind(this)}
-          />
-          <Education
-            values={this.state.educationItems}
-            add={this.addEducationItem.bind(this)}
-            delete={this.deleteEducationItem.bind(this)}
-            update={this.updateEducationItem.bind(this)}
-          />
+          <div className="forms">
+            <PersonalInfo
+              values={this.state.personalInfo}
+              update={this.updatePersonalInfo.bind(this)}
+            />
+            <JobHistory
+              values={this.state.jobHistoryItems}
+              add={this.addJobHistoryItem.bind(this)}
+              delete={this.deleteJobHistoryItem.bind(this)}
+              update={this.updateJobHistoryItem.bind(this)}
+            />
+            <Education
+              values={this.state.educationItems}
+              add={this.addEducationItem.bind(this)}
+              delete={this.deleteEducationItem.bind(this)}
+              update={this.updateEducationItem.bind(this)}
+            />
+          </div>
           <CV values={this.state} />
           <div className="buttons form-row">
             <button onClick={() => this.reset()}>Reset</button>
