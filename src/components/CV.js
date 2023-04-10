@@ -46,11 +46,11 @@ export default class CoverLetter extends Component {
           <div className="description">{personalInfo.description}</div>
         </div>
         <div className="job-history">
-          <div>Job History</div>
+          <div className="job-history-title">Job History</div>
           <div className="job-history-elements">{jobHistoryElements}</div>
         </div>
         <div className="education">
-          <div>Education</div>
+          <div className="education-title">Education</div>
           <div className="education-elements">{educationElements}</div>
         </div>
       </div>

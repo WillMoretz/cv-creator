@@ -52,7 +52,7 @@ footer {
 .cover-letter {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: min-content auto;
+  grid-template-rows: min-content min-content auto;
   grid-template-areas: "name name" "job info" "education info";
   box-shadow: 2px 2px rgba(0, 0, 0, 0.1), -2px -2px rgba(0, 0, 0, 0.1);
   border: 2px solid black;
@@ -88,6 +88,7 @@ footer {
   grid-template-columns: auto 1fr;
   grid-template-areas: "dates main";
   align-items: center;
+  padding-bottom: 0.5rem;
 }
 
 .dates {
@@ -111,6 +112,11 @@ footer {
 
 .education {
   grid-area: education;
+}
+
+.job-history-title,
+.education-title {
+  text-decoration: underline;
 }
 
 input,
@@ -138,4 +144,38 @@ button:hover {
   cursor: pointer;
   filter: brightness(90%);
   box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 600px) {
+  .job-history-title,
+  .education-title {
+    font-size: 1.25rem;
+    padding: 0.5rem 0 0.5rem 2rem;
+  }
+
+  .job-history-elements,
+  .education-elements {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  section {
+    display: grid;
+    grid-template-columns: 1fr 800px;
+    grid-template-areas: "forms cv";
+    justify-content: center;
+  }
+
+  .forms {
+    grid-area: forms;
+  }
+
+  .cover-letter {
+    grid-area: cv;
+    margin: 0.75rem 3rem 0 0;
+    height: min-content;
+    position: sticky;
+    top: 0;
+  }
 }
