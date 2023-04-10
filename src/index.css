@@ -7,7 +7,7 @@
 :root {
   --light: #fffffe;
   --dark: #2b2c34;
-  --button: #6246ea;
+  --button: #463788;
   --secondary: #d1d1e9;
   --tertiary: #e45858;
 }
@@ -31,12 +31,22 @@ footer {
   background-color: var(--secondary, lightgrey);
   color: var(--dark, black);
   text-align: center;
+  padding: 0.25rem 0 0.25rem 0;
+  font-style: italic;
+  font-weight: 500;
 }
 
 .form-row {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0.25rem 0 0.25rem 0;
+}
+
+.items-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .cover-letter {
@@ -46,4 +56,26 @@ footer {
 input,
 button {
   min-width: 300px;
+}
+
+button {
+  background-color: var(--button, purple);
+  color: var(--light, white);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.25rem 0 0.25rem 0;
+  margin: 0.25rem 0 0.25rem 0;
+  border: 4px solid black;
+  border-radius: 2rem;
+}
+
+.delete-button {
+  background-color: var(--tertiary, orange);
+  color: var(--dark, black);
+}
+
+button:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
 }

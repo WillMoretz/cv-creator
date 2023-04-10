@@ -13,8 +13,9 @@ export default class PersonalInfo extends Component {
   render() {
     return (
       <form>
+        <div className="items-title form-row">Personal Information</div>
         <div className="form-row">
-          <label htmlFor="name">Name: </label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             name="name"
@@ -24,7 +25,7 @@ export default class PersonalInfo extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="title">Title: </label>
+          <label htmlFor="title">Title</label>
           <input
             type="text"
             name="title"
@@ -34,7 +35,7 @@ export default class PersonalInfo extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="email">Email: </label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             name="email"
@@ -44,7 +45,7 @@ export default class PersonalInfo extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="phone">Phone Number: </label>
+          <label htmlFor="phone">Phone Number</label>
           <input
             type="tel"
             name="phone"
@@ -54,7 +55,7 @@ export default class PersonalInfo extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="description">Description: </label>
+          <label htmlFor="description">Description</label>
           <input
             type="text"
             name="description"

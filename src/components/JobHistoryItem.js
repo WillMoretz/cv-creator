@@ -18,7 +18,7 @@ export default class JobHistoryItem extends Component {
     return (
       <form>
         <div className="form-row">
-          <label htmlFor="position">Position: </label>
+          <label htmlFor="position">Position</label>
           <input
             type="text"
             name="position"
@@ -30,7 +30,7 @@ export default class JobHistoryItem extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="company">Company: </label>
+          <label htmlFor="company">Company</label>
           <input
             type="text"
             name="company"
@@ -42,7 +42,7 @@ export default class JobHistoryItem extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="job-start-date">Start: </label>
+          <label htmlFor="job-start-date">Start</label>
           <input
             type="text"
             name="job-start-date"
@@ -52,7 +52,7 @@ export default class JobHistoryItem extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="job-end-date">End: </label>
+          <label htmlFor="job-end-date">End</label>
           <input
             type="text"
             name="job-end-date"
@@ -62,6 +62,7 @@ export default class JobHistoryItem extends Component {
           />
         </div>
         <button
+          className="delete-button"
           type="button"
           onClick={() => this.handleDelete(this.props.keyProp)}
         >

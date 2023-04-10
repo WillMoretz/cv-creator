@@ -183,10 +183,10 @@ export default class App extends Component {
             delete={this.deleteEducationItem.bind(this)}
             update={this.updateEducationItem.bind(this)}
           />
+          <CV values={this.state} />
           <div className="buttons form-row">
             <button onClick={() => this.reset()}>Reset</button>
           </div>
-          <CV values={this.state} />
         </section>
         <footer>Made by Will Moretz</footer>
       </div>

@@ -18,7 +18,7 @@ export default class EducationItem extends Component {
     return (
       <form>
         <div className="form-row">
-          <label htmlFor="school-name">School Name: </label>
+          <label htmlFor="school-name">School Name</label>
           <input
             type="text"
             name="school-name"
@@ -28,7 +28,7 @@ export default class EducationItem extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="subject">Subject: </label>
+          <label htmlFor="subject">Subject</label>
           <input
             type="text"
             name="subject"
@@ -40,7 +40,7 @@ export default class EducationItem extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="degree">Degree: </label>
+          <label htmlFor="degree">Degree</label>
           <input
             type="text"
             name="degree"
@@ -50,7 +50,7 @@ export default class EducationItem extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="education-start-date">Start: </label>
+          <label htmlFor="education-start-date">Start</label>
           <input
             type="text"
             name="education-start-date"
@@ -60,7 +60,7 @@ export default class EducationItem extends Component {
           />
         </div>
         <div className="form-row">
-          <label htmlFor="education-end-date">End: </label>
+          <label htmlFor="education-end-date">End</label>
           <input
             type="text"
             name="education-end-date"
@@ -70,6 +70,7 @@ export default class EducationItem extends Component {
           />
         </div>
         <button
+          className="delete-button"
           type="button"
           onClick={() => this.handleDelete(this.props.keyProp)}
         >
