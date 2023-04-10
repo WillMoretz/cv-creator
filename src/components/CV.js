@@ -6,7 +6,7 @@ export default class CoverLetter extends Component {
     const { personalInfo, educationItems, jobHistoryItems } = this.props.values;
 
     const jobHistoryElements = jobHistoryItems.map((item) => (
-      <div className="job-history-item" key={uuid()}>
+      <div className="job-history-item" key={`${uuid()}diff`}>
         <div className="position">{item.position}</div>
         <div className="company">{item.company}</div>
         <div className="start">{item.start}</div>
@@ -15,7 +15,7 @@ export default class CoverLetter extends Component {
     ));
 
     const educationElements = educationItems.map((item) => (
-      <div className="education-item" key={uuid}>
+      <div className="education-item" key={`${uuid()}diff`}>
         <div className="name">{item.name}</div>
         <div className="subject">{item.subject}</div>
         <div className="degree">{item.degree}</div>
