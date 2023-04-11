@@ -51,7 +51,7 @@ footer {
 
 .cover-letter {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 4fr 1fr;
   grid-template-rows: min-content min-content auto;
   grid-template-areas: "name name" "job info" "education info";
   box-shadow: 2px 2px rgba(0, 0, 0, 0.1), -2px -2px rgba(0, 0, 0, 0.1);
@@ -64,6 +64,7 @@ footer {
   color: var(--light, white);
   text-align: center;
   padding: 0.25rem 0 0.5rem 0;
+  min-height: 5rem;
 }
 
 .personal-name > .name {
@@ -81,6 +82,9 @@ footer {
   background-color: var(--secondary, rgba(255, 0, 255, 0.5));
   text-align: center;
   padding-top: 1rem;
+  min-width: 0;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .history-item {
@@ -104,6 +108,9 @@ footer {
 .job-history,
 .education {
   background-color: var(--light, white);
+  min-width: 0;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .job-history {
@@ -112,6 +119,7 @@ footer {
 
 .education {
   grid-area: education;
+  min-height: 20rem;
 }
 
 .job-history-title,
