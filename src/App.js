@@ -5,6 +5,8 @@ import CV from "./components/CV";
 import Education from "./components/Education";
 import JobHistory from "./components/JobHistory";
 import PersonalInfo from "./components/PersonalInfo";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import "./index.css";
 
 export default class App extends Component {
@@ -209,6 +211,17 @@ export default class App extends Component {
     }
   }
 
+  saveCV() {
+    const pdfComponent = document.querySelector(".cover-letter");
+    html2canvas(pdfComponent).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "JPEG", 0, 0);
+      // pdf.output('dataurlnewwindow');
+      pdf.save("download.pdf");
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -244,6 +257,7 @@ export default class App extends Component {
             >
               Load Example
             </button>
+            <button onClick={() => this.saveCV()}>Save as PDF</button>
           </div>
         </section>
         <footer>Made by Will Moretz</footer>
