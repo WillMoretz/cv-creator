@@ -38,6 +38,53 @@ export default class App extends Component {
     }));
   }
 
+  loadExample() {
+    this.setState({
+      personalInfo: {
+        name: "John Doe",
+        title: "Web Developer",
+        email: "fakeEmail@email.com",
+        phone: "000-000-0000",
+        description:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum doloribus inventore sequi cupiditate alias tempora qui molestiae atque, assumenda labore!",
+      },
+      educationItems: [
+        {
+          key: uuid(),
+          name: "some university",
+          subject: "computer science",
+          degree: "bachelors",
+          start: "aug 10, 2007",
+          end: "may 10 2011",
+        },
+        {
+          key: uuid(),
+          name: "some university",
+          subject: "math",
+          degree: "certificate",
+          start: "aug 10, 2007",
+          end: "may 10 2011",
+        },
+      ],
+      jobHistoryItems: [
+        {
+          key: uuid(),
+          position: "intern",
+          company: "fake company 1",
+          start: "Aug 10, 2012",
+          end: "Aug 10, 2013",
+        },
+        {
+          key: uuid(),
+          position: "junior web developer",
+          company: "fake company 2",
+          start: "Jan 15, 2013",
+          end: "Dec 10, 2016",
+        },
+      ],
+    });
+  }
+
   addJobHistoryItem() {
     const newJobHistoryItems = this.state.jobHistoryItems;
     newJobHistoryItems.push({
@@ -187,7 +234,16 @@ export default class App extends Component {
           </div>
           <CV values={this.state} />
           <div className="buttons form-row">
-            <button onClick={() => this.reset()}>Reset</button>
+            <button className="reset-button" onClick={() => this.reset()}>
+              Reset
+            </button>
+            <button
+              onClick={() => {
+                this.loadExample();
+              }}
+            >
+              Load Example
+            </button>
           </div>
         </section>
         <footer>Made by Will Moretz</footer>

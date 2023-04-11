@@ -51,7 +51,7 @@ footer {
 
 .cover-letter {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-template-rows: min-content min-content auto;
   grid-template-areas: "name name" "job info" "education info";
   box-shadow: 2px 2px rgba(0, 0, 0, 0.1), -2px -2px rgba(0, 0, 0, 0.1);
@@ -93,6 +93,7 @@ footer {
   grid-template-areas: "dates main";
   align-items: center;
   padding-bottom: 0.5rem;
+  border-bottom: 2px dotted black;
 }
 
 .dates {
@@ -125,6 +126,7 @@ footer {
 .job-history-title,
 .education-title {
   text-decoration: underline;
+  border-bottom: 2px dotted black;
 }
 
 input,
@@ -143,7 +145,8 @@ button {
   border-radius: 2rem;
 }
 
-.delete-button {
+.delete-button,
+.reset-button {
   background-color: var(--tertiary, orange);
   color: var(--dark, black);
 }
@@ -164,6 +167,10 @@ button:hover {
   .job-history-elements,
   .education-elements {
     font-size: 1.25rem;
+  }
+
+  .dates {
+    font-size: 1rem;
   }
 }
 
