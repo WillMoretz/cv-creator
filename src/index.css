@@ -51,7 +51,7 @@ footer {
 
 .cover-letter {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 5fr 2fr;
   grid-template-rows: min-content min-content auto;
   grid-template-areas: "name name" "job info" "education info";
   box-shadow: 2px 2px rgba(0, 0, 0, 0.1), -2px -2px rgba(0, 0, 0, 0.1);
@@ -85,6 +85,10 @@ footer {
   min-width: 0;
   word-wrap: break-word;
   word-break: break-all;
+}
+
+.personal-info > div {
+  margin: 0.75rem 0.25rem 0 0.25rem;
 }
 
 .history-item {
@@ -166,7 +170,7 @@ button:hover {
 
   .job-history-elements,
   .education-elements {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .dates {
